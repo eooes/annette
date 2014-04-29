@@ -1,7 +1,8 @@
 
 
     $(document).ready(function() {
-        
+        $('.slide').height($(window).height());
+        $('.slidex').height($(window).height()-60);
         //Get Sections top position
         function getTargetTop(elem){
             
