@@ -88,3 +88,122 @@ $(function () {
 
 /* jquery.simplr.smoothscroll version 1.0 copyright (c) 2012 https://github.com/simov/simplr-smoothscroll licensed under MIT */
 ;(function(e){"use strict";e.srSmoothscroll=function(t){var n=e.extend({step:85,speed:600,ease:"linear"},t||{});var r=e(window),i=e(document),s=0,o=n.step,u=n.speed,a=r.height(),f=navigator.userAgent.indexOf("AppleWebKit")!==-1?e("body"):e("html"),l=false;e("body").mousewheel(function(e,t){l=true;if(t<0)s=s+a>=i.height()?s:s+=o;else s=s<=0?0:s-=o;f.stop().animate({scrollTop:s},u,n.ease,function(){l=false});return false});r.on("resize",function(e){a=r.height()}).on("scroll",function(e){if(!l)s=r.scrollTop()})}})(jQuery);
+
+
+
+/*
+
+Responsive Mobile Menu v1.0
+Plugin URI: responsivemobilemenu.com
+
+Author: Sergio Vitov
+Author URI: http://xmacros.com
+
+License: CC BY 3.0 http://creativecommons.org/licenses/by/3.0/
+
+*/
+
+function responsiveMobileMenu() {   
+        $('.rmm').each(function() {
+            
+            
+            
+            $(this).children('ul').addClass('rmm-main-list');   // mark main menu list
+            
+            
+            var $style = $(this).attr('data-menu-style');   // get menu style
+                if ( typeof $style == 'undefined' ||  $style == false )
+                    {
+                        $(this).addClass('graphite'); // set graphite style if style is not defined
+                    }
+                else {
+                        $(this).addClass($style);
+                    }
+                    
+                    
+            /*  width of menu list (non-toggled) */
+            
+            var $width = 0;
+                $(this).find('ul li').each(function() {
+                    $width += $(this).outerWidth();
+                });
+                
+            // if modern browser
+            
+            if ($.support.leadingWhitespace) {
+                $(this).css('max-width' , $width*1.05+'px');
+            }
+            // 
+            else {
+                $(this).css('width' , $width*1.05+'px');
+            }
+        
+        });
+}
+function getMobileMenu() {
+
+    /*  build toggled dropdown menu list */
+    
+    $('.rmm').each(function() { 
+
+                var $menulist = $(this).children('.rmm-main-list').html();
+                var $menucontrols ="<div class='rmm-button'><span>&nbsp;</span><span>&nbsp;</span><span>&nbsp;</span></div>";
+                $(this).prepend("<div class='rmm-toggled rmm-closed'>"+$menucontrols+"<ul>"+$menulist+"</ul></div>");
+
+        });
+}
+
+function adaptMenu() {
+    
+    /*  toggle menu on resize */
+    
+    $('.rmm').each(function() {
+            var $width = $(this).css('max-width');
+            $width = $width.replace('px', ''); 
+            if ( $(this).parent().width() < $width*1.05 ) {
+                $(this).children('.rmm-main-list').hide(0);
+                $(this).children('.rmm-toggled').show(0);
+            }
+            else {
+                $(this).children('.rmm-main-list').show(0);
+                $(this).children('.rmm-toggled').hide(0);
+            }
+        });
+        
+}
+
+$(function() {
+
+     responsiveMobileMenu();
+     getMobileMenu();
+     adaptMenu();
+     
+     /* slide down mobile menu on click */
+     
+     $('.rmm-toggled, .rmm-toggled .rmm-button').click(function(){
+        if ( $(this).is(".rmm-closed")) {
+             $(this).find('ul').stop().show(300);
+             $(this).removeClass("rmm-closed");
+        }
+        else {
+            $(this).find('ul').stop().hide(300);
+             $(this).addClass("rmm-closed");
+        }
+        
+    }); 
+
+});
+    /*  hide mobile menu on resize */
+$(window).resize(function() {
+    adaptMenu();
+});
+
+
+
+        $(function(){
+            $.stellar({
+                horizontalScrolling: false,
+                verticalOffset: 40
+            });
+        });
+        
