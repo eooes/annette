@@ -19,7 +19,7 @@ $(document).ready(function() {
           };
 
 
-        $('.fullscreen').height($(window).height()*0.9);
+        $('.fullscreen').height($(window).height());
         $('#Photos').width($(document).width()+150);
 
         // $('.slide').height($(window).height());
