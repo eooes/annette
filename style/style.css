@@ -596,9 +596,9 @@ h3 {
   height: 0px;
   border-style: solid;
   border-width: 40px 45px 0 45px;
-  border-color: #FF5252 transparent transparent transparent;
+  border-color: #87b49c transparent transparent transparent;
   line-height: 0px;
-  _border-color: #FF5252 #000000 #000000 #000000;
+  _border-color: #87b49c #000000 #000000 #000000;
   _filter: progid:DXImageTransform.Microsoft.Chroma(color='#000000');
 }
 #html2 h1 i,
@@ -714,10 +714,15 @@ h3 {
 	-webkit-text-stroke: 0.3px;
 	color: white;
 	font-size: 2em;
-	background-color: #FF5252;
+	background-color: #87b49c;
 }
 #slide0 a {text-decoration: none; color: blue;}
-#slide0 p {background: #FA3E3E; padding: 20px; margin-top: 5px;}
+#slide0 p {
+	background: #5aaa97; 
+	padding: 20px; 
+	margin-top: -13px;
+	z-index: 6px;
+}
 #slide0 h1 {text-align: center; margin: 0px;}
 #slide0 .absolute-center {padding-top: 80px; padding-bottom: 50px; }
 .c_right {float: right !important;}
@@ -925,3 +930,52 @@ footer img { margin-bottom: 5px; width: 55px;}
 
 
 
+.floating{
+    -webkit-animation-name: Floatingx;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    -moz-animation-name: Floating;
+    -moz-animation-duration: 3s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-timing-function: ease-in-out;
+
+
+}
+
+@-webkit-keyframes Floatingx{
+    from {-webkit-transform:translate(0, 0px);}
+    65% {-webkit-transform:translate(0, 15px);}
+    to {-webkit-transform: translate(0, -0px);    }    
+}
+    
+@-moz-keyframes Floating{
+    from {-moz-transform:translate(0, 0px);}
+    65% {-moz-transform:translate(0, 15px);}
+    to {-moz-transform: translate(0, -0px);}    
+}
+
+
+.scaling{
+
+    -webkit-animation-name: scalex;
+    -webkit-animation-duration:3s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:ease-in-out;
+    -moz-animation-name: scale;
+    -moz-animation-duration:3s;
+    -moz-animation-iteration-count:infinite;
+    -moz-animation-timing-function:ease-in-out;
+}
+    
+    @-webkit-keyframes scalex{
+        from {-webkit-transform: scale(0.9);}
+        65% {-webkit-transform: scale(1.0);}
+        to {-webkit-transform: scale(0.9);}    
+    }
+        
+    @-moz-keyframes scale{
+        from {-moz-transform: scale(0.9);}
+        65% {-moz-transform: scale(1.0);}
+        to {-moz-transform: scale(0.9);}    
+    }
