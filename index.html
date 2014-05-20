@@ -53,8 +53,9 @@
 <div class="slide" id="slide0" data-slide="1">
 <div class="container clearfix" id="html0">
 <div class="absolute-center into_msg">
+<h1>
+<img src="images/annet-herself.png"></h1>
 <p>
-
 <i>Annette</i>, a dessert Chef having loads of talent with a keen eye for magnificence, is a passionate woman who loves art, music and cooking the most amongst all aesthetic art forms. 
 <!-- Read further to know her better… -->
 
@@ -62,6 +63,11 @@
 
 </div>
 </div>
+
+<div class="photo0 slidex fullscreen" data-stellar-background-ratio="0.5" style="background-position: 50% 0px;">
+<div class="triangle4"> </div>
+</div>
+
 </div>
 
 
@@ -89,14 +95,20 @@
   <br>
   <h1><i>ANNETTE</i>franchise</h1>
   <p>
-All you need to do to get our Franchise is to follows these 2 simple steps:<br>
-<i>Step:1</i>
-Incur a franchise permission fee.<br>
-<i>Step:2</i>
-Incur a Leasing fee for the vehicle (tuk-tuk) on a monthly basis.<br>
-• Ice cream sticks will be available for you to buy at a fixed wholesale price.
-• A Ready-to-use merchandise set will be provided with the Vehicle (tuk-tuk).
-  </p>
+All you need to do to get our Franchise is to follows these 2 simple steps</p>
+<div class="clearfix">
+  <div class="choices">
+    <h5>1</h5><br>
+    Incur a franchise permission fee.
+  </div>
+  <div class="choices c_right">
+  <h5>2</h5><br>
+  Incur a Leasing fee for the vehicle (tuk-tuk) on a monthly basis.
+  </div>
+</div>
+<p>
+• Ice cream sticks will be available for you to buy at a fixed wholesale price • A Ready-to-use merchandise set will be provided with the Vehicle (tuk-tuk).
+ </p>
 
 </div>
 
@@ -215,7 +227,7 @@ Putting together a casual event? And would love for us to be there, spreading th
   <div class="col-xs-6">
     <div class="rule"></div>
     <span class="icon-map circle_sm"></span>
-    <div class="rule"></div>
+    <div class="rule2"></div>
     <div class="address clearfix">
       <div class="clearfix">
       <div class="title ep0"><span class="icon-location"></span></div>
@@ -245,7 +257,7 @@ Putting together a casual event? And would love for us to be there, spreading th
   <div class="col-xs-6">
     <div class="rule"></div>
     <span class="icon-pen circle_sm2"></span>
-    <div class="rule"></div>
+    <div class="rule2"></div>
 <?php
 if (!isset($_POST["submit"])) {
   ?>
@@ -270,7 +282,7 @@ if (!isset($_POST["submit"])) {
     // message lines should not exceed 70 characters (PHP rule), so wrap it
     $message = wordwrap($message, 70);
     // send mail
-    mail("eemachine@gmail.com","email from $email",
+    mail("contact@annetteitimtuktuk.com","email from $email",
       "From: $from\nEmail: $email\nMessage:$message",
       "From: $from\n");
     echo "<h3>Thank you for sending us feedback<h3>";
